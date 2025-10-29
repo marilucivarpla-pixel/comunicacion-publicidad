@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicación y Publicidad - Escuela Pública Media Superior</title>
+    <meta name="description" content="Especialidad en Comunicación y Publicidad: formación técnica, práctica y certificada con SENA.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Inter:wght@500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;font-weight:500;background:#F8F9FA;color:#2D2D2D;line-height:1.6;scroll-behavior:smooth}
+        .gradient-bg{background:linear-gradient(135deg,#00D4FF 0%,#8B5FBF 50%,#FF6B9D 100%)}
+        .gradient-text{background:linear-gradient(135deg,#00D4FF 0%,#8B5FBF 50%,#FF6B9D 100%);-webkit-background-clip:text;-webkit-text-fill-color transparent;background-clip:text}
+        .neon-color{color:#39FF14}
+        .title-font{font-family:'Poppins',sans-serif;font-weight:800}
+        .mono-font{font-family:'JetBrains Mono',monospace}
+        .btn{padding:12px 24px;border-radius:25px;border:none;cursor:pointer;font-weight:500;text-decoration:none;display:inline-block;transition:all .3s ease;box-shadow:0 4px 12px rgba(0,0,0,.08);text-align:center}
+        .btn:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+        .btn-primary{background:#39FF14;color:#2D2D2D}
+        .btn-secondary{background:linear-gradient(135deg,#00D4FF 0%,#8B5FBF 50%,#FF6B9D 100%);color:#fff}
+        .card{background:#fff;border-radius:15px;padding:24px;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:all .3s ease}
+        .card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+        .sticky-nav{position:fixed;top:0;width:100%;background:rgba(248,249,250,.95);backdrop-filter:blur(10px);z-index:1000;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.1)}
+        .nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:center;flex-wrap:wrap;gap:20px}
+        .nav-link{color:#2D2D2D;text-decoration:none;font-weight:500;padding:8px 16px;border-radius:20px;transition:all .3s ease;font-size:14px}
+        .nav-link:hover{background:linear-gradient(135deg,#00D4FF 0%,#8B5FBF 50%,#FF6B9D 100%);color:#fff}
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding-top:60px}
+        .hero-content{max-width:800px;padding:0 20px;z-index:2}
+        .hero h1{font-size:clamp(2.5rem,5vw,4rem);margin-bottom:20px;color:#fff}
+        .hero p{font-size:1.2rem;margin-bottom:30px;color:rgba(255,255,255,.9)}
+        .section{padding:80px 0}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        .section-title{font-size:2.5rem;text-align:center;margin-bottom:50px}
+        .grid{display:grid;gap:30px}
+        .grid-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+        .grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+        .teacher-card{text-align:center}
+        .teacher-img{width:150px;height:150px;border-radius:50%;margin:0 auto 20px;background:linear-gradient(135deg,#00D4FF 0%,#8B5FBF 50%,#FF6B9D 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:3rem;background-size:cover;background-position:center;background-repeat:no-repeat}
+        .teacher-img-emilce{background-image:url(https://i.imgur.com/i3zDtkd.jpg)}
+        .teacher-img-stefany{background-image:url(https://i.imgur.com/GOH2Eia.jpg)}
+        .gallery-item,.project-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:all .3s ease}
+        .gallery-item:hover,.project-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+        .gallery-img,.project-thumbnail{width:100%;height:200px;background:linear-gradient(135deg,#00D4FF 0%,#8B5FBF 50%,#FF6B9D 100%);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;text-align:center;padding:10px;background-size:cover;background-position:center;background-repeat:no-repeat}
+        .img-convivencia{background-image:url(https://i.imgur.com/dzU1tJ5.jpg);color:transparent}
+        .img-canaltro{background-image:url(https://i.imgur.com/tENAMmt.jpg);color:transparent}
+        .img-retiro{background-image:url(https://i.imgur.com/BgIwT9O.jpg);color:transparent}
+        .img-diatecnico{background-image:url(https://i.imgur.com/VHW3sQX.jpg);color:transparent}
+        .project-thumbnail{background:#2D2D2D;color:#39FF14;font-size:1.5rem}
+        .gallery-content,.project-content{padding:20px}
+        .date{font-size:.9rem;color:#666;margin-bottom:10px}
+        .magazine-section{text-align:center;padding:80px 0;background:linear-gradient(135deg,rgba(0,212,255,.1) 0%,rgba(139,95,191,.1) 50%,rgba(255,107,157,.1) 100%)}
+        .magazine-mockup{width:300px;height:200px;margin:0 auto 30px;background:#fff;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#666}
+        .footer{background:#2D2D2D;color:#fff;padding:40px 0;text-align:center}
+        .footer-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+        .social-links{display:flex;gap:15px}
+        .social-link{color:#fff;text-decoration:none;padding:10px;border-radius:50%;background:linear-gradient(135deg,#00D4FF 0%,#8B5FBF 50%,#FF6B9D 100%);transition:all .3s ease;display:flex;align-items:center;justify-content:center;width:35px;height:35px;font-size:1.2rem}
+        .social-link:hover{transform:scale(1.1)}
+        .highlight-section{background:linear-gradient(135deg,rgba(0,212,255,.1) 0%,rgba(139,95,191,.1) 50%,rgba(255,107,157,.1) 100%);border-radius:20px;padding:40px;margin:40px 0;text-align:center}
+        @media(max-width:768px){.nav-container{flex-direction:row;justify-content:space-around;gap:10px}.nav-link{font-size:12px;padding:6px 10px}.grid-3{grid-template-columns:1fr}.footer-content{flex-direction:column;text-align:center}.section{padding:60px 0}.section-title{font-size:2rem}}
+    </style>
+</head>
+<body>
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="#que-hacemos" class="nav-link">¿Qué hacemos?</a>
+            <a href="#materias" class="nav-link">Materias</a>
+            <a href="#docentes" class="nav-link">Docentes</a>
+            <a href="#formacion" class="nav-link">Formación Práctica</a>
+            <a href="#salidas" class="nav-link">Salidas</a>
+            <a href="#proyectos" class="nav-link">Proyectos</a>
+            <a href="#revista" class="nav-link">Revista</a>
+        </div>
+    </nav>
+
+    <section class="hero gradient-bg" id="hero">
+        <div class="hero-content">
+            <h1 class="title-font">Comunicación y Publicidad</h1>
+            <p>Descubre tu potencial creativo y desarrolla las habilidades que transformarán tu futuro profesional</p>
+            <a href="#que-hacemos" class="btn btn-primary">Explorar</a>
+        </div>
+    </section>
+
+    <section class="section" id="que-hacemos">
+        <div class="container">
+            <h2 class="section-title title-font gradient-text">¿Qué hacemos?</h2>
+            <div class="card" style="max-width:800px;margin:0 auto;text-align:center">
+                <p style="font-size:1.1rem;line-height:1.8">En nuestra especialidad de <strong>Comunicación y Publicidad</strong>, formamos jóvenes creativos y estratégicos capaces de transmitir mensajes efectivos en un mundo digital en constante evolución.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="materias">
+        <div class="container">
+            <h2 class="section-title title-font gradient-text">Materias</h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3 class="title-font" style="color:#00D4FF;margin-bottom:15px">📢 Comunicación</h3>
+                    <p>Desarrolla habilidades de expresión clara y con impacto. Aprende técnicas de oratoria, redacción creativa y comunicación efectiva para diferentes audiencias.</p>
+                </div>
+                <div class="card">
+                    <h3 class="title-font" style="color:#8B5FBF;margin-bottom:15px">📺 Medios</h3>
+                    <p>Explora plataformas digitales y tradicionales como radio, TV y redes sociales. Domina las herramientas tecnológicas para la producción de contenido audiovisual.</p>
+                </div>
+                <div class="card">
+                    <h3 class="title-font" style="color:#FF6B9D;margin-bottom:15px">🎨 Publicidad</h3>
+                    <p>Crea mensajes persuasivos, campañas innovadoras y estrategias creativas de mercadeo. Aprende a conectar con las emociones del público.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="docentes">
+        <div class="container">
+            <h2 class="section-title title-font gradient-text">Nuestros Docentes</h2>
+            <div class="grid grid-2">
+                <div class="card teacher-card">
+                    <div class="teacher-img teacher-img-emilce"></div>
+                    <h3 class="title-font">Hna. Emilce Rueda</h3>
+                    <p style="color:#666;margin:10px 0">Guía Espiritual y Académica</p>
+                    <p>Combina la excelencia académica con sólidos valores éticos y cristianos, guiando a nuestros estudiantes hacia un crecimiento personal responsable.</p>
+                </div>
+                <div class="card teacher-card">
+                    <div class="teacher-img teacher-img-stefany"></div>
+                    <h3 class="title-font">Stefany Benítez</h3>
+                    <p style="color:#666;margin:10px 0">Docente SENA - Especialista en Medios Digitales</p>
+                    <p>Aporta experiencia práctica y conocimientos actualizados en producción audiovisual, edición de video y estrategias de comunicación digital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="formacion">
+        <div class="container">
+            <h2 class="section-title title-font gradient-text">Formación Práctica</h2>
+            <div class="highlight-section">
+                <h3 class="title-font" style="font-size:1.8rem;margin-bottom:20px">🎯 Experiencia Real y Doble Certificación</h3>
+                <div class="grid grid-2" style="text-align:left">
+                    <div>
+                        <h4 style="color:#00D4FF;margin-bottom:10px">📻 150 Horas de Práctica Institucional</h4>
+                        <p>Trabajo directo en nuestra emisora escolar, desarrollo de proyectos comunicacionales internos y manejo de las redes sociales de la institución.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:#FF6B9D;margin-bottom:10px">🎬 880 Horas de Formación SENA</h4>
+                        <p>Formación certificada en producción audiovisual, grabaciones, fotografía y edición de video. Obtendrás un certificado técnico profesional del SENA.</p>
+                    </div>
+                </div>
+                <p style="margin-top:20px;font-weight:bold;color:#39FF14">¡Más de 1000 horas de experiencia práctica teórica-técnica!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="salidas">
+        <div class="container">
+            <h2 class="section-title title-font gradient-text">Salidas y Eventos</h2>
+            <div class="grid grid-2">
+                <div class="gallery-item">
+                    <a href="https://i.imgur.com/dzU1tJ5.jpg" target="_blank" rel="noopener noreferrer">
+                        <div class="gallery-img img-convivencia"></div>
+                    </a>
+                    <div class="gallery-content">
+                        <p class="date mono-font">11 de Febrero 2025</p>
+                        <h3 class="title-font">Jornada de Convivencia</h3>
+                        <p>Una jornada dedicada a fortalecer el trabajo en equipo y la integración grupal.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://i.imgur.com/tENAMmt.jpg" target="_blank" rel="noopener noreferrer">
+                        <div class="gallery-img img-canaltro"></div>
+                    </a>
+                    <div class="gallery-content">
+                        <p class="date mono-font">22 de Abril 2025</p>
+                        <h3 class="title-font">Visita a las Instalaciones de Canal Tro</h3>
+                        <p>Los estudiantes exploraron de primera mano el funcionamiento interno de un canal de televisión regional.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://i.imgur.com/BgIwT9O.jpg" target="_blank" rel="noopener noreferrer">
+                        <div class="gallery-img img-retiro"></div>
+                    </a>
+                    <div class="gallery-content">
+                        <p class="date mono-font">20 de Mayo 2025</p>
+                        <h3 class="title-font">Retiro Espiritual</h3>
+                        <p>Un espacio de reflexión profunda para desconectar y enfocarse en el crecimiento personal.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://i.imgur.com/VHW3sQX.jpg" target="_blank" rel="noopener noreferrer">
+                        <div class="gallery-img img-diatecnico"></div>
+                    </a>
+                    <div class="gallery-content">
+                        <p class="date mono-font">11 de Septiembre 2025</p>
+                        <h3 class="title-font">Día Técnico: Expo-Especialidad</h3>
+                        <p>Nuestros estudiantes se convirtieron en guías y expositores ante alumnos de noveno grado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="proyectos">
+        <div class="container">
+            <h2 class="section-title title-font gradient-text">Proyectos Audiovisuales</h2>
+            <div class="grid grid-3">
+                <div class="project-card">
+                    <a href="https://www.youtube.com/watch?v=YF0NKzoQQSQ" target="_blank" rel="noopener noreferrer">
+                        <div class="project-thumbnail">▶️ Ver Video Institucional</div>
+                    </a>
+                    <div class="project-content">
+                        <p class="date mono-font">18 Ago 2025</p>
+                        <h3 class="title-font">Campaña: Inscripciones Abiertas 2026</h3>
+                        <p>Video promocional diseñado y producido íntegramente por los estudiantes.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <a href="https://www.youtube.com/watch?v=c_bKRwoNUO8" target="_blank" rel="noopener noreferrer">
+                        <div class="project-thumbnail">▶️ Video Informativo</div>
+                    </a>
+                    <div class="project-content">
+                        <p class="date mono-font">26 Ago 2025</p>
+                        <h3 class="title-font">¿Cuál Especialidad Escoger?</h3>
+                        <p>Video informativo dirigido a estudiantes de noveno grado.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <a href="https://www.youtube.com/watch?v=N3liAsoZg6I" target="_blank" rel="noopener noreferrer">
+                        <div class="project-thumbnail">▶️ Jornada Nocturna</div>
+                    </a>
+                    <div class="project-content">
+                        <p class="date mono-font">16 Sept 2025</p>
+                        <h3 class="title-font">Campaña: Jornada Nocturna</h3>
+                        <p>Pieza audiovisual para promocionar las inscripciones a la jornada nocturna.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="magazine-section" id="revista">
+        <div class="container">
+            <h2 class="section-title title-font gradient-text">Nuestra Revista Digital</h2>
+            <div class="magazine-mockup">📖 Edición Especial</div>
+            <p style="margin-bottom:30px;font-size:1.1rem">Explora las creaciones, artículos de opinión, entrevistas y proyectos destacados de nuestros estudiantes.</p>
+            <a href="https://www.calameo.com/books/0071647529176d5d8598e" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Revista</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 class="title-font">🏫 Escuela Pública Media Superior</h3>
+                    <p>Especialidad en Comunicación y Publicidad</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Facebook">📘</a>
+                    <a href="#" class="social-link" title="Instagram">📷</a>
+                    <a href="#" class="social-link" title="YouTube">📺</a>
+                    <a href="#" class="social-link" title="Twitter">🐦</a>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:20px;padding-top:20px;border-top:1px solid #444">
+                <p>&copy; 2025 Escuela Pública Media Superior - Comunicación y Publicidad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
